@@ -1,6 +1,6 @@
 import { html, render } from '../dom.js';
 import { collections } from '../api/data.js';
-import { repeat } from '../../node_modules/lit-html/directives/repeat.js';
+import { repeat } from 'https://unpkg.com/lit-html/directives/repeat?module';
 
 
 let ctx = null;
