@@ -10,6 +10,9 @@ export function initialize(links) {
 
   function onNavigate(ev) {
     let target = ev.target;
+    if(target.tagName === 'SPAN') {
+      target = target.parentElement;
+    }
     if (target.tagName === 'A') {
       ev.preventDefault();
       const url = new URL(target.href);
