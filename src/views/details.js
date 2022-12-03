@@ -1,11 +1,10 @@
-import { html, render } from '../dom.js';
+import { html } from '../lib.js';
+import { collections } from '../api/data.js';
 
-
-let ctx = null;
 
 const detailsTemplate = (a) => html`
 <section class="details">
-<div class="wrapper">
+  <div class="wrapper">
     <div class="product-img">
       <img src="${a.img}" height="420" width="327">
     </div>
@@ -15,13 +14,15 @@ const detailsTemplate = (a) => html`
         <p>${a.description}</p>
       </div>
       <div class="back-btn">
-        <button @click=${() => ctx.goTo('/catalog')} type="button">Назад</button>
+        <a class="btn" href="/catalog" type="button">Назад</a>
       </div>
     </div>
   </div>
 </section>`;
 
-export function showDetails(context, a) {
-  ctx = context;
-  render(detailsTemplate(a), document.querySelector('main'));
+export function showDetails(ctx) {
+  const colId = Number(ctx.params.colId);
+  const id = ctx.params.id;
+  const a = collections[colId].article.find(o => o.id === id);
+  ctx.render(detailsTemplate(a));
 }

@@ -1,8 +1,8 @@
-import { html, render } from '../dom.js';
+import { html } from '../lib.js';
 
-
-export function showBlog() {
-  render(blogTemplate(), document.querySelector('main'));
-}
 
 const blogTemplate = () => html`<h1 class="blog">Няма статии</h1>`;
+
+export function showBlog(ctx) {
+  ctx.render(blogTemplate());
+}

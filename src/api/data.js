@@ -2,6 +2,7 @@ export const collections = [
   {
     firstT: 'Baby shine - ',
     secondT: 'продукти за бебета',
+    id: '0',
     article: [{
       id: '01',
       title: 'Спрей за сън с лавандула',
@@ -39,6 +40,7 @@ export const collections = [
   {
     firstT: 'Natural shine - ',
     secondT: 'продукти за възрастни',
+    id: '1',
     article: [{
       id: '05',
       title: 'Маска за коса от маслина за всякакъв тип коса',

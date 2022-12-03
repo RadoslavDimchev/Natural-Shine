@@ -1,9 +1,5 @@
-import { html, render } from '../dom.js';
+import { html } from '../lib.js';
 
-
-export function showContact() {
-  render(contactTemplate(), document.querySelector('main'));
-}
 
 const contactTemplate = () => html`
 <section class="contact" id="contact">
@@ -13,3 +9,7 @@ const contactTemplate = () => html`
             <input type="submit" value="send message" class="btn">
         </form>
 </section>`;
+
+export function showContact(ctx) {
+  ctx.render(contactTemplate());
+}

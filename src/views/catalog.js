@@ -1,30 +1,30 @@
-import { html, render } from '../dom.js';
+import { html } from '../lib.js';
 import { collections } from '../api/data.js';
-import { repeat } from 'https://unpkg.com/lit-html/directives/repeat?module';
 
 
-let ctx = null;
-
-const cardTemplate = (a) => html`
+const cardTemplate = (a, id) => html`
 <div class="box">
     <div class="image">
         <img src=${a.img} alt="">
         <div class="icons">
-            <button @click=${() => ctx.goTo('/details', a)} class="cart-btn">Детайли</button>
+            <a href=${`/catalog/${id}/${a.id}`} class="cart-btn">Детайли</a>
         </div>
-</div>
-<div class="content">
-    <h3>${a.title}</h3>
-</div>
+    </div>
+    <div class="content">
+        <h3>${a.title}</h3>
+    </div>
 </div>`;
 
 const catalogTemplate = (c) => html`
 <section class="products" id="products">
-    <h1 class="heading"> ${c.firstT} <span>${c.secondT}</span> </h1>
-    <div class="box-container">${repeat(c.article, (i) => i.id , cardTemplate)}</div>
+    <h1 class="heading"> ${c[0].firstT} <span>${c[0].secondT}</span> </h1>
+    <div class="box-container">${c[0].article.map(a => cardTemplate(a, c[0].id))}</div>
+</section>
+<section class="products" id="products">
+    <h1 class="heading"> ${c[1].firstT} <span>${c[1].secondT}</span> </h1>
+    <div class="box-container">${c[1].article.map(a => cardTemplate(a, c[1].id))}</div>
 </section>`;
 
-export function showCatalog(context) {
-    ctx = context;
-    render(collections.map(catalogTemplate), document.querySelector('main'));
+export function showCatalog(ctx) {
+    ctx.render(catalogTemplate(collections));
 }
