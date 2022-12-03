@@ -1,24 +1,27 @@
-import { initialize } from './router.js';
 import { showAbout } from './views/about.js';
 import { showBlog } from './views/blog.js';
 import { showCatalog } from './views/catalog.js';
 import { showContact } from './views/contact.js';
 import { showDetails } from './views/details.js';
 import { showHome } from './views/home.js';
+import { page, render } from './lib.js';
 
 
-// console.log(articles);
+const main = document.querySelector('main');
 
-const links = {
-  '/': showHome,
-  '/catalog': showCatalog,
-  '/details': showDetails,
-  '/blog': showBlog,
-  '/about': showAbout,
-  '/contact': showContact
-};
+page(decorateContext);
+page('/', showHome);
+page('/catalog', showCatalog);
+page('/catalog/:colId/:id', showDetails);
+page('/blog', showBlog);
+page('/about', showAbout);
+page('/contact', showContact);
 
-const router = initialize(links);
+// Start Application
+page.start();
 
-// start the application in home view
-router.goTo('/');
+function decorateContext(ctx, next) {
+  ctx.render = (content) => render(content, main);
+
+  next();
+} 
