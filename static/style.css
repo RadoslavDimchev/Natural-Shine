@@ -288,6 +288,14 @@ header a:hover {
   color: #333;
 }
 
+.price{
+  font-size: 2rem;
+  color:var(--purple);
+  font-weight: bolder;
+  padding-top: 1rem;
+  margin: 0 0 0 38px;
+}
+
 
 /* details view */
 .details-container {

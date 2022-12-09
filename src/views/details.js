@@ -11,6 +11,7 @@ const detailsTemplate = (a) => html`
     <div class="product-info">
       <div class="product-text">
         <h1>${a.title}</h1>
+        <div class="price">${a.price}</div>
         <p>${a.description}</p>
       </div>
       <div class="back-btn">

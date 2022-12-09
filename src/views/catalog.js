@@ -12,6 +12,7 @@ const cardTemplate = (a, id) => html`
     </div>
     <div class="content">
         <h3>${a.title}</h3>
+        <div class="price">${a.price}</div>
     </div>
 </div>`;
 
