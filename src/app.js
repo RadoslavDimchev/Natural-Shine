@@ -1,10 +1,12 @@
+import page from './lib/page.mjs';
+import { render } from './lib/lit-html.js';
+
 import { showAbout } from './views/about.js';
 import { showBlog } from './views/blog.js';
 import { showCatalog } from './views/catalog.js';
 import { showContact } from './views/contact.js';
 import { showDetails } from './views/details.js';
 import { showHome } from './views/home.js';
-import { page, render } from './lib.js';
 
 
 const main = document.querySelector('main');

@@ -1,4 +1,4 @@
-import { html } from '../lib.js';
+import { html } from '../lib/lit-html.js';
 import { collections } from '../api/data.js';
 
 
