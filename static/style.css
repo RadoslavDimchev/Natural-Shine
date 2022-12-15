@@ -12,7 +12,6 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
   transition: .1s linear;
 }
 
@@ -147,7 +146,7 @@ header a:hover {
 
 .home .content p {
   font-size: 1.5rem;
-  color: #999;
+  color: #333;
   padding: 1rem 0;
   line-height: 1.5;
 }
