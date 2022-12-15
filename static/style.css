@@ -54,6 +54,13 @@ section {
   background: var(--purple);
 }
 
+p {
+  font-size: 2rem;
+  color: #333;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
 /* Header */
 
 header {
@@ -164,13 +171,12 @@ header a:hover {
 
 /* About */
 .about {
-  font-size: 5rem;
   display: flex;
   align-items: center;
   min-height: 100vh;
-  margin-left: 400px;
+  margin: auto;
+  max-width: 75vh;
 }
-
 
 /* Contact */
 .contact {
@@ -179,10 +185,12 @@ header a:hover {
   gap: 1.5rem;
   align-items: center;
   min-height: 110vh;
+  max-width: 100vh;
+  margin: auto;
 }
 
 .contact form {
-  flex: 1 1 40rem;
+  flex: 1 1 4rem;
   padding: 2rem 2.5rem;
   box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
   border: .1rem solid rgba(0, 0, 0, .1);
@@ -287,9 +295,9 @@ header a:hover {
   color: #333;
 }
 
-.price{
+.price {
   font-size: 2rem;
-  color:var(--purple);
+  color: var(--purple);
   font-weight: bolder;
   padding-top: 1rem;
   margin: 0 0 0 38px;
@@ -381,19 +389,25 @@ header a:hover {
 
 
 .wrapper {
-  height: 600px;
-  width: 800px;
+  display: flex;
   margin: 180px auto;
   border-radius: 7px 7px 7px 7px;
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  height: auto;
+  max-width: 800px;
+}
+
+.wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
 }
 
 .product-img {
   float: left;
-  height: 600px;
-  width: 300px;
 }
 
 .product-img img {
@@ -402,34 +416,23 @@ header a:hover {
 
 .product-info {
   float: left;
-  height: 450px;
-  width: 500px;
   border-radius: 0 7px 10px 7px;
   background-color: #ffffff;
 }
 
 .product-text {
-  height: 520px;
-  width: 500px;
   padding-right: 20px;
 }
 
 .product-text h1 {
-  margin: 0 0 30px 38px;
-  padding-top: 32px;
+  margin: 20px 0 30px 38px;
   font-size: 34px;
   color: #474747;
-}
-
-.product-text h1,
-.product-price-btn p {
-  font-family: 'Bentham', serif;
 }
 
 .product-text h2 {
   margin: 0 0 47px 38px;
   font-size: 13px;
-  font-family: 'Raleway', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: #d2d2d2;
@@ -438,20 +441,17 @@ header a:hover {
 
 .product-text p {
   text-transform: none;
-  height: 360px;
-  margin: 0 0 0 38px;
-  font-family: 'Playfair Display', serif;
-  color: #8d8d8d;
+  margin: 10px 0 0 38px;
+  color: #333;
   line-height: 1.7em;
   font-size: 16px;
   font-weight: lighter;
   overflow: hidden;
+  text-align: justify;
 }
 
 .back-btn {
-  height: 103px;
-  width: 327px;
   margin-top: 17px;
   position: relative;
-  margin: 0 40px;
+  margin: 30px 30px;
 }

@@ -1,31 +1,32 @@
 import { html } from '../lib/lit-html.js';
-import { collections } from '../api/data.js';
+import { products } from '../api/data.js';
 
 
-const cardTemplate = (a, id) => html`
+const firstHeading = ['Natural shine - ', 'продукти за възрастни'];
+const secondHeading = ['Baby shine - ', 'продукти за бебета'];
+
+const cardTemplate = (p) => html`
 <div class="box">
     <div class="image">
-        <img src=${a.img} alt="">
+        <img src=${p.img} alt="">
         <div class="icons">
-            <a href=${`/catalog/${id}/${a.id}`} class="cart-btn">Детайли</a>
+            <a href=${`/catalog/${p.id}`} class="cart-btn">Детайли</a>
         </div>
     </div>
     <div class="content">
-        <h3>${a.title}</h3>
-        <div class="price">${a.price}</div>
+        <h3>${p.title}</h3>
+        <div class="price">${p.price}</div>
     </div>
 </div>`;
 
-const catalogTemplate = (c) => html`
+const catalogTemplate = (products) => html`
 <section class="products" id="products">
-    <h1 class="heading"> ${c[0].firstT} <span>${c[0].secondT}</span> </h1>
-    <div class="box-container">${c[0].article.map(a => cardTemplate(a, c[0].id))}</div>
-</section>
-<section class="products" id="products">
-    <h1 class="heading"> ${c[1].firstT} <span>${c[1].secondT}</span> </h1>
-    <div class="box-container">${c[1].article.map(a => cardTemplate(a, c[1].id))}</div>
+    <h1 class="heading"> ${firstHeading[0]} <span>${firstHeading[1]}</span> </h1>
+    <div class="box-container">${products.filter(p => p.serie === 'babyshine').map(cardTemplate)}</div>
+    <h1 class="heading"> ${secondHeading[0]} <span>${secondHeading[1]}</span> </h1>
+    <div class="box-container">${products.filter(p => p.serie === 'naturalshine').map(cardTemplate)}</div>
 </section>`;
 
 export function showCatalog(ctx) {
-    ctx.render(catalogTemplate(collections));
+    ctx.render(catalogTemplate(products));
 }

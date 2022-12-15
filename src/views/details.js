@@ -1,18 +1,18 @@
 import { html } from '../lib/lit-html.js';
-import { collections } from '../api/data.js';
+import { products } from '../api/data.js';
 
 
-const detailsTemplate = (a) => html`
+const detailsTemplate = (p) => html`
 <section class="details">
   <div class="wrapper">
     <div class="product-img">
-      <img src="${a.img}" height="420" width="327">
+      <img src="${p.img}" width="320">
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1>${a.title}</h1>
-        <div class="price">${a.price}</div>
-        <p>${a.description}</p>
+        <h1>${p.title}</h1>
+        <div class="price">${p.price}</div>
+        <p>${p.description}</p>
       </div>
       <div class="back-btn">
         <a class="btn" href="/catalog" type="button">Назад</a>
@@ -22,8 +22,7 @@ const detailsTemplate = (a) => html`
 </section>`;
 
 export function showDetails(ctx) {
-  const colId = Number(ctx.params.colId);
   const id = ctx.params.id;
-  const a = collections[colId].article.find(o => o.id === id);
+  const a = products.find(p => p.id === id);
   ctx.render(detailsTemplate(a));
 }

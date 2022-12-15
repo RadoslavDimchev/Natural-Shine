@@ -7,15 +7,15 @@ import { showCatalog } from './views/catalog.js';
 import { showContact } from './views/contact.js';
 import { showDetails } from './views/details.js';
 import { showHome } from './views/home.js';
+import { showBlogDetails } from './views/blogDetails.js';
 
-
-const main = document.querySelector('main');
 
 page(decorateContext);
 page('/', showHome);
 page('/catalog', showCatalog);
-page('/catalog/:colId/:id', showDetails);
+page('/catalog/:id', showDetails);
 page('/blog', showBlog);
+page('/blog/:id', showBlogDetails);
 page('/about', showAbout);
 page('/contact', showContact);
 
@@ -23,7 +23,6 @@ page('/contact', showContact);
 page.start();
 
 function decorateContext(ctx, next) {
-  ctx.render = (content) => render(content, main);
-
+  ctx.render = (content) => render(content, document.querySelector('main'));
   next();
 } 
