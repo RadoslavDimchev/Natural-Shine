@@ -6,9 +6,8 @@ const homeTemplate = () => html`
 
   <div class="content">
     <h3>Натурални продукти</h3>
-    <span> Направено от нас </span>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum ut minus corrupti dolorum dolore
-      assumenda iste voluptate dolorem pariatur.</p>
+    <span> Направени от нас </span>
+    <p>Nature is what gives us life!</p>
     <a href="/catalog" class="btn">Вижте повече</a>
   </div>
 

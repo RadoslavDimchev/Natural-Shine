@@ -2,8 +2,8 @@ import { html } from '../lib/lit-html.js';
 import { products } from '../api/data.js';
 
 
-const firstHeading = ['Natural shine - ', 'продукти за възрастни'];
-const secondHeading = ['Baby shine - ', 'продукти за бебета'];
+const firstHeading = ['Baby shine - ', 'продукти за бебета'];
+const secondHeading = ['Natural shine - ', 'продукти за възрастни'];
 
 const cardTemplate = (p) => html`
 <div class="box">
