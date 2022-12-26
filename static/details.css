@@ -41,7 +41,7 @@
 .product-info {
   float: left;
   border-radius: 0 7px 10px 7px;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .product-text {
@@ -51,22 +51,13 @@
 .product-text h1 {
   margin: 20px 0 30px 38px;
   font-size: 34px;
-  color: #474747;
-}
-
-.product-text h2 {
-  margin: 0 0 47px 38px;
-  font-size: 13px;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #d2d2d2;
-  letter-spacing: 0.2em;
+  color: var(--black);
 }
 
 .product-text p {
   text-transform: none;
   margin: 10px 0 0 38px;
-  color: #333;
+  color: var(--gray);
   line-height: 1.7em;
   font-size: 16px;
   font-weight: lighter;

@@ -49,8 +49,8 @@
   line-height: 5rem;
   font-size: 1.5rem;
   width: 50%;
-  background: var(--purple);
-  color: #fff;
+  background: var(--lavender);
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .products .box-container .box .image .icons a:hover {
-  background: #333;
+  background: var(--gray);
 }
 
 .products .box-container .box .content {
@@ -71,12 +71,12 @@
 
 .products .box-container .box .content h3 {
   font-size: 2rem;
-  color: #333;
+  color: var(--gray);
 }
 
 .price {
   font-size: 2rem;
-  color: var(--purple);
+  color: var(--lavender);
   font-weight: bolder;
   padding-top: 1rem;
   margin: 0 0 0 38px;

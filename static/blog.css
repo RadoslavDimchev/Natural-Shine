@@ -1,0 +1,7 @@
+.blog {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin-left: 500px;
+}

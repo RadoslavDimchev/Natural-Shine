@@ -4,18 +4,14 @@
 @import "contact.css";
 @import "catalog.css";
 @import "details.css";
+@import "blog.css";
+@import "about.css";
 
 
 :root {
-  /* https://www.canva.com/colors/color-palettes/pasture-of-dreams/ */
-  --mauve: #d3b1c2;
-  --lavender: #c197d2;
+  --white: #fff;
+  --lavender: #db97f6;
   --black: #211522;
-  --orchid: #613659;
-
-  /* https://www.canva.com/colors/color-palettes/flowers-like-eyes/ */
-  --purple: #c55ffc;
-  --purple-haze: #efdcf9;
-  --purple-charcoal: #323e42;
-  --violet: #7954a1;
+  --orchid: #733768;
+  --gray: #333;
 }
