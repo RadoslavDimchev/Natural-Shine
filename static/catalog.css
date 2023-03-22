@@ -79,5 +79,11 @@
   color: var(--lavender);
   font-weight: bolder;
   padding-top: 1rem;
-  margin: 0 0 0 38px;
+}
+
+.number {
+  font-size: 1.5rem;
+  color: var(--gray);
+  font-weight: bolder;
+  padding-top: 1rem;
 }

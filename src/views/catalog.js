@@ -17,6 +17,7 @@ const cardTemplate = (p) => html`
     <div class="content">
         <h3>${p.title}</h3>
         <div class="price">${p.price}</div>
+        <div class="number">Каталожен номер: ${p.number}</div>
     </div>
 </div>`;
 
